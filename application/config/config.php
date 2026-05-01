@@ -24,7 +24,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 */
 if (getenv('DB_HOST') === 'db') {
-    $config['base_url'] = 'http://' . $_SERVER['HTTP_HOST'] . '/';
+    $proto = (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ? 'https' : 'http';
+    $config['base_url'] = $proto . '://' . $_SERVER['HTTP_HOST'] . '/';
 } else {
     $config['base_url'] = 'http://localhost/sismul19/';
 }
