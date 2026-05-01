@@ -25,7 +25,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 // Auto-detect base_url: Laragon = /sismul19/, Docker = /
 if (getenv('DB_HOST') === 'db') {
-    $config['base_url'] = 'http://localhost:8080/';
+    $config['base_url'] = 'http://localhost:8081/';
 } else {
     $config['base_url'] = 'http://localhost/sismul19/';
 }
