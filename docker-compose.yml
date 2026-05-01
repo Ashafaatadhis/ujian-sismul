@@ -18,6 +18,7 @@ services:
       - ./application/logs:/var/www/html/application/logs
       - ./application/cache:/var/www/html/application/cache
       - ./upload:/var/www/html/upload
+    command: bash -c "mkdir -p /var/www/html/upload/kamar && chmod -R 777 /var/www/html/upload && apache2-foreground"
 
   db:
     image: mysql:8.0

@@ -12,6 +12,7 @@ CREATE TABLE kamar (
     lantai TINYINT NOT NULL,
     id_tipe_kamar INT NOT NULL,
     status ENUM('tersedia','terisi') DEFAULT 'tersedia',
+    foto VARCHAR(255) DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_tipe_kamar) REFERENCES tipe_kamar(id)
 );

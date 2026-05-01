@@ -21,6 +21,7 @@
               <thead>
                 <tr>
                   <th>#</th>
+                  <th>Foto</th>
                   <th>Nomor Kamar</th>
                   <th>Lantai</th>
                   <th>Tipe</th>
@@ -33,6 +34,13 @@
                 <?php $no = 1; foreach ($kamar as $k): ?>
                 <tr>
                   <td><?= $no++ ?></td>
+                  <td>
+                    <?php if (isset($k->foto) && $k->foto): ?>
+                      <img src="<?= base_url('upload/kamar/' . $k->foto) ?>" width="60" height="50" class="rounded" style="object-fit:cover">
+                    <?php else: ?>
+                      <span class="text-muted">-</span>
+                    <?php endif; ?>
+                  </td>
                   <td><?= $k->nomor_kamar ?></td>
                   <td><?= $k->lantai ?></td>
                   <td><?= $k->nama_tipe ?></td>
