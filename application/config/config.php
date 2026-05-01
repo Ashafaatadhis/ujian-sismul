@@ -23,9 +23,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-// Auto-detect base_url: Laragon = /sismul19/, Docker = /
 if (getenv('DB_HOST') === 'db') {
-    $config['base_url'] = 'http://localhost:8081/';
+    $config['base_url'] = 'http://' . $_SERVER['HTTP_HOST'] . '/';
 } else {
     $config['base_url'] = 'http://localhost/sismul19/';
 }
