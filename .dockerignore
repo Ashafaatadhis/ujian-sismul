@@ -1,0 +1,7 @@
+.git
+.dockerignore
+application/logs/*
+application/cache/*
+upload/*
+user_guide
+sources
